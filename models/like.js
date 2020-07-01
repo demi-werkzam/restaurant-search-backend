@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   like.associate = function (models) {
-    // associations can be defined here
+    like.belongsTo(models.visit);
   };
   return like;
 };

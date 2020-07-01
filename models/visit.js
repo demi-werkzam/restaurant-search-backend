@@ -3,12 +3,13 @@ module.exports = (sequelize, DataTypes) => {
   const visit = sequelize.define(
     "visit",
     {
-      visit: DataTypes.BOOLEAN,
+      visited: DataTypes.BOOLEAN,
     },
     {}
   );
   visit.associate = function (models) {
-    // associations can be defined here
+    visit.belongsTo(models.restaurant);
+    visit.belongsTo(models.user);
   };
   return visit;
 };
