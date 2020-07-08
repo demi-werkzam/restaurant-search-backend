@@ -37,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   restaurant.associate = function (models) {
     restaurant.hasMany(models.visit);
+    restaurant.belongsTo(models.user);
   };
   return restaurant;
 };

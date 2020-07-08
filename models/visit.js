@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   visit.associate = function (models) {
     visit.belongsTo(models.restaurant);
     visit.belongsTo(models.user);
+    visit.hasMany(models.like);
   };
   return visit;
 };
